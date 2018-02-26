@@ -36,5 +36,5 @@ What I used to build this app :
 
 *Good to know*
 
-* You can see UML charts [here]()
-* You can see mockups of the app [here](https://bitbucket.org/oreliask/blogelectro-v1/src/bbfbc2c326b5566bde545a533dc50be29db1996d/public/mockup/?at=master)
+* You can see UML charts [here](https://github.com/OreliaSk/PHP-natif-Bitsound_v1/tree/master/public/UML)
+* You can see mockups of the app [here](https://github.com/OreliaSk/PHP-natif-Bitsound_v1/tree/master/public/mockup)
