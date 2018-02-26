@@ -25,7 +25,7 @@ Don't forget to create a new database and edit your .env file with your own info
 
 What I used to build this app :
 
-* Php 7.0.10 - PHP (natif)
+* [Php 7.0.10](http://php.net/downloads.php) - PHP (natif)
 * [Bootstrap 4.0](https://getbootstrap.com/) - CSS framework
 * [Balsamiq](https://balsamiq.com/) - Mockup tool
 * [Trello](https://trello.com/b/WqGHlGBr/blogelectrolu) - Online tool project management
@@ -36,5 +36,5 @@ What I used to build this app :
 
 *Good to know*
 
-You can see UML charts [here]()
-You can see mockups of the app [here](https://bitbucket.org/oreliask/blogelectro-v1/src/bbfbc2c326b5566bde545a533dc50be29db1996d/public/mockup/?at=master)
+* You can see UML charts [here]()
+* You can see mockups of the app [here](https://bitbucket.org/oreliask/blogelectro-v1/src/bbfbc2c326b5566bde545a533dc50be29db1996d/public/mockup/?at=master)
