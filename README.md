@@ -29,6 +29,7 @@ What I used to build this app :
 * [Bootstrap 4.0](https://getbootstrap.com/) - CSS framework
 * [Balsamiq](https://balsamiq.com/) - Mockup tool
 * [Trello](https://trello.com/b/WqGHlGBr/blogelectrolu) - Online tool project management
+* [Slides.com](http://slides.com/oreliask/deck-5) - Presentation tools
 
 ### Author
 
