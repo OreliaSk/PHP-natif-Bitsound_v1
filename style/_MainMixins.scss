@@ -1,0 +1,57 @@
+/***********************************************
+				VARIABLES
+***********************************************/
+/* TYPOGRAPHY */
+
+$futuraBk : 'Futura Bk BT', Helvetica, Arial, sans serif;
+$futuraLT : 'Futura Lt BT', Helvetica, Arial, sans serif;
+
+/* COLORS */
+$black : #000;
+$white : #fff;
+$green : #50FAA8;
+
+/* HEIGHT */
+$mh : 25vh;
+
+/* WIDTH */
+
+/***********************************************
+				MIXINS
+***********************************************/
+/*avec animation*/
+@mixin animation($animation...) {
+  -webkit-animation: $animation;
+     -moz-animation: $animation;
+      -ms-animation: $animation;
+          animation: $animation;
+}
+
+/* avec border-radius*/
+@mixin radius($radius...) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/*
+.[name_of-class] { @include radius(10px); }
+*/
+
+/*avec box-shadow*/
+@mixin boxShadow($shadow...){
+	-webkit-box-shadow: $shadow;
+	   -moz-box-shadow: $shadow;
+		-ms-box-shadow: $shadow;
+			box-shadow: $shadow;
+}
+
+/*avec les transitions*/
+@mixin transition($transition...){
+	-webkit-transition: $transition;
+	   -moz-transition: $transition;
+		-ms-transition: $transition;
+			transition: $transition;
+}
+
