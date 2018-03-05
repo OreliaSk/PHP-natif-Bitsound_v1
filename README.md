@@ -21,12 +21,13 @@ For running the app, make sure you have [php 7+](http://php.net/downloads.php), 
 
 ### Installing
 
-Don't forget to create a new database and edit your .env file with your own informations.
+Don't forget to create a new database and edit your config.example.php file with your own informations.
 
 What I used to build this app :
 
-* [Php 7.0.10](http://php.net/downloads.php) - PHP (natif)
-* [Bootstrap 4.0](https://getbootstrap.com/) - CSS framework
+* [Php v7.0.10](http://php.net/downloads.php) - PHP (natif)
+* [Bootstrap v4.0](https://getbootstrap.com/) - CSS framework
+* [jQuery v3.3.1](https://jquery.com/) - JS librairy
 * [Balsamiq](https://balsamiq.com/) - Mockup tool
 * [Trello](https://trello.com/b/WqGHlGBr/blogelectrolu) - Online tool project management
 * [Slides.com](http://slides.com/oreliask/deck-5) - Presentation tools
