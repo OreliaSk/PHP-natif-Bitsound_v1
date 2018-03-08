@@ -1,0 +1,42 @@
+/***********************************************
+				VARIABLES
+***********************************************/
+/* TYPOGRAPHY */
+/* COLORS */
+/* HEIGHT */
+/* WIDTH */
+/***********************************************
+				MIXINS
+***********************************************/
+/*avec animation*/
+/* avec border-radius*/
+/*
+.[name_of-class] { @include radius(10px); }
+*/
+/*avec box-shadow*/
+/*avec les transitions*/
+/***********************************************
+				WRAPPER
+***********************************************/
+.festivals-list {
+  color: #fff !important;
+  padding-top: 25vh; }
+  .festivals-list h1 {
+    background: url(./../img/home/hands-light.jpg) repeat;
+    border: 2px solid green;
+    text-align: center;
+    height: 50vh; }
+  .festivals-list .single-festival {
+    border-radius: 3px;
+    margin: 20px;
+    padding: 10px;
+    text-align: justify; }
+    .festivals-list .single-festival .border-content {
+      border-top: 1px solid #50FAA8; }
+    .festivals-list .single-festival a {
+      color: #fff; }
+      .festivals-list .single-festival a:hover {
+        color: #50FAA8;
+        text-decoration: none; }
+
+/*# sourceMappingURL=festivals.css.map */

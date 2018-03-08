@@ -77,6 +77,43 @@ nav{
 ***********************************************/
 .menu{
 	padding-top: $mh;
+	.articles{
+		background: url(../../img/home/hands-light.jpg);
+		background-size: 100%; 
+		color: $white;
+		font-size: 1.7rem;
+		height: 100vh;
+	}
+	.artists{
+		background: url(../../img/home/face.jpg);
+		background-size: 100%; 
+		color: $white;
+		font-size: 1.7rem;
+		height: 100vh;
+	}
+	.festivals{
+		background: url(../../img/home/firework.jpg);
+		background-size: 100%; 
+		color: $white;
+		font-size: 1.7rem;
+		height: 100vh;
+	}
+	.line-menu{
+		background-color: $white;
+		height: 2px;
+		width: 50px;
+	}
+	a{
+		color: $white !important;
+		&:hover{
+			color: $green !important;
+			text-decoration: none !important;
+		}
+	}
+	.menu-link{
+		padding-top: 30vh;
+		padding-left: 1.7vw;
+	}
 }
 
 /***********************************************
@@ -85,6 +122,7 @@ nav{
 .latest-news{
 	margin-top: 70px;
 	h2{
+		border-bottom: 1px solid #ccc;
 		color: $white; 
 		font-size: 1.2 rem;
 	}
@@ -98,9 +136,15 @@ nav{
 			text-decoration: none !important; 
 		}
 	}
-	p{
+	p, .nextContent{
 		color: $white;
 		font-family: 'Futura Lt BT';
+	}
+	.border-content{
+		border-top: 1px solid $green;
+	}
+	.comments a{
+		font-size: 0.9rem;
 	}
 
 }
@@ -110,24 +154,47 @@ nav{
 ***********************************************/
 
 .home-footer{
-	input{
-		border:0; 
-		background-color: #000; 
-		border: 1px solid #fff;
-		color: #fff;
-		padding: 10px;
+	color: $white;
+	h4{
+		border-bottom: 1px solid #ccc;
+		color: $white; 
+		font-size: 1.2 rem;
 	}
-
-	textarea{
-		background-color: #000;  
-		border: 0; 
-		border:1px solid #fff;
-		color: #fff;
-		padding: 10px;
+	form{
+		input{
+			border:0; 
+			background-color: #000; 
+			border: 1px solid #fff;
+			color: #fff;
+			height: 8vh;
+			margin-bottom: 15px;
+			padding: 10px;
+			width: 20vw;
+		}
+	
+		textarea{
+			background-color: #000;  
+			border: 0; 
+			border:1px solid #fff;
+			color: #fff;
+			padding: 10px;
+		}
+		button{
+			border: 0; 
+			background-color: #fff; 
+			color:#000;
+			font-size: 1.3rem;
+		}
 	}
-	button{
-		border: 0; 
-		background-color: #fff; 
-		color:#000;
+	.copyright{
+		font-size: .8rem;
+		letter-spacing: 1px;
+		a{
+			color: $white;
+			&:hover{
+				color: $green;
+				text-decoration: none;
+			}
+		}
 	}
 }

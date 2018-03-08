@@ -68,6 +68,36 @@ nav {
 ***********************************************/
 .menu {
   padding-top: 25vh; }
+  .menu .articles {
+    background: url(../../img/home/hands-light.jpg);
+    background-size: 100%;
+    color: #fff;
+    font-size: 1.7rem;
+    height: 100vh; }
+  .menu .artists {
+    background: url(../../img/home/face.jpg);
+    background-size: 100%;
+    color: #fff;
+    font-size: 1.7rem;
+    height: 100vh; }
+  .menu .festivals {
+    background: url(../../img/home/firework.jpg);
+    background-size: 100%;
+    color: #fff;
+    font-size: 1.7rem;
+    height: 100vh; }
+  .menu .line-menu {
+    background-color: #fff;
+    height: 2px;
+    width: 50px; }
+  .menu a {
+    color: #fff !important; }
+    .menu a:hover {
+      color: #50FAA8 !important;
+      text-decoration: none !important; }
+  .menu .menu-link {
+    padding-top: 30vh;
+    padding-left: 1.7vw; }
 
 /***********************************************
 				LATEST NEWS
@@ -75,6 +105,7 @@ nav {
 .latest-news {
   margin-top: 70px; }
   .latest-news h2 {
+    border-bottom: 1px solid #ccc;
     color: #fff;
     font-size: 1.2 rem; }
   .latest-news h3 {
@@ -84,28 +115,50 @@ nav {
     .latest-news a:hover {
       color: #50FAA8 !important;
       text-decoration: none !important; }
-  .latest-news p {
+  .latest-news p, .latest-news .nextContent {
     color: #fff;
     font-family: 'Futura Lt BT'; }
+  .latest-news .border-content {
+    border-top: 1px solid #50FAA8; }
+  .latest-news .comments a {
+    font-size: 0.9rem; }
 
 /***********************************************
 				FOOTER
 ***********************************************/
-.home-footer input {
-  border: 0;
-  background-color: #000;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 10px; }
-.home-footer textarea {
-  background-color: #000;
-  border: 0;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 10px; }
-.home-footer button {
-  border: 0;
-  background-color: #fff;
-  color: #000; }
+.home-footer {
+  color: #fff; }
+  .home-footer h4 {
+    border-bottom: 1px solid #ccc;
+    color: #fff;
+    font-size: 1.2 rem; }
+  .home-footer form input {
+    border: 0;
+    background-color: #000;
+    border: 1px solid #fff;
+    color: #fff;
+    height: 8vh;
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 20vw; }
+  .home-footer form textarea {
+    background-color: #000;
+    border: 0;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 10px; }
+  .home-footer form button {
+    border: 0;
+    background-color: #fff;
+    color: #000;
+    font-size: 1.3rem; }
+  .home-footer .copyright {
+    font-size: .8rem;
+    letter-spacing: 1px; }
+    .home-footer .copyright a {
+      color: #fff; }
+      .home-footer .copyright a:hover {
+        color: #50FAA8;
+        text-decoration: none; }
 
 /*# sourceMappingURL=home.css.map */

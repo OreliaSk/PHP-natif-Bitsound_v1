@@ -1,0 +1,42 @@
+/***********************************************
+				VARIABLES
+***********************************************/
+/* TYPOGRAPHY */
+/* COLORS */
+/* HEIGHT */
+/* WIDTH */
+/***********************************************
+				MIXINS
+***********************************************/
+/*avec animation*/
+/* avec border-radius*/
+/*
+.[name_of-class] { @include radius(10px); }
+*/
+/*avec box-shadow*/
+/*avec les transitions*/
+/***********************************************
+				WRAPPER
+***********************************************/
+.articles-list {
+  color: #fff !important;
+  padding-top: 25vh; }
+  .articles-list h1 {
+    background: url(./../img/home/hands-light.jpg) repeat;
+    border: 2px solid green;
+    text-align: center;
+    height: 50vh; }
+  .articles-list .single-article {
+    border-radius: 3px;
+    margin: 20px;
+    padding: 10px;
+    text-align: justify; }
+    .articles-list .single-article .border-content {
+      border-top: 1px solid #50FAA8; }
+    .articles-list .single-article a {
+      color: #fff; }
+      .articles-list .single-article a:hover {
+        color: #50FAA8;
+        text-decoration: none; }
+
+/*# sourceMappingURL=posts.css.map */
