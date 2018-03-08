@@ -68,7 +68,7 @@
 			<h2 class="text-center pb-4">Les dernières actualités</h2>
 			<div class="latest-artist mt-5 mb-5">
 				<div class="row">
-					<div class="col-sm-4 offset-md-2" style="background:url(img/actu/fakear2.jpg); background-size: 100%;h">
+					<div class="col-sm-4 offset-md-2" style="background:url(img/actu/fakear2.jpg); background-size: 100%;">
 					</div>
 					<div class="col-sm-4 infos pl-5 text-justify">
 						<?php	
