@@ -18,6 +18,7 @@
 
 	<div id="wrapper">
 		<?php include('navbar.php');?>
+		<div class="festivals-list container">
 		<h1>Festivals</h1>
 		<hr />
 
@@ -28,10 +29,15 @@
 				while($row = $stmt->fetch()){
 					
 					echo '<div>';
-						echo '<h2><a href="viewfestival.php?id='.$row['festivalId'].'">'.$row['title'].'</a></h2>';
-						echo '<p>Posted on '.date('jS M Y H:i:s', strtotime($row['created_at'])).'</p>';
-						echo '<p>'.$row['description'].'</p>';				
-						echo '<p><a href="viewfestival.php?id='.$row['festivalId'].'">Read More</a></p>';				
+						echo '<div class="row single-festival">';
+							echo '<div class="col-md-5" style="background:url(img/actu/fakear2.jpg); background-size: 100%;"></div>';
+							echo '<div class="col-md-6 pl-5">';
+								echo '<h2><a href="viewfestival.php?id='.$row['festivalId'].'">'.$row['title'].'</a></h2>';
+								echo '<p>Posted on '.date('jS M Y H:i:s', strtotime($row['created_at'])).'</p>';
+								echo '<p>'.$row['description'].'</p>';				
+								echo '<p><a href="viewfestival.php?id='.$row['festivalId'].'">Read More</a></p>';				
+							echo '</div>';
+						echo '</div>';
 					echo '</div>';
 
 				}
@@ -40,7 +46,15 @@
 			    echo $e->getMessage();
 			}
 		?>
-
+		<nav aria-label="Page navigation example">
+			<ul class="pagination">
+				<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+				<li class="page-item"><a class="page-link" href="#">1</a></li>
+				<li class="page-item"><a class="page-link" href="#">2</a></li>
+				<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item"><a class="page-link" href="#">Next</a></li>
+			</ul>
+		</nav>
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

@@ -18,7 +18,7 @@
 
 	<div id="wrapper">
 		<?php include('navbar.php');?>
-		<div class="articles-list" style="border: 2px solid red; padding-top: 25vh;">
+		<div class="articles-list container">
 			<h1>Articles</h1>
 			<hr />
 
@@ -29,18 +29,31 @@
 					while($row = $stmt->fetch()){
 						
 						echo '<div>';
-							echo '<h2><a href="viewpost.php?id='.$row['postID'].'">'.$row['postTitle'].'</a></h2>';
-							echo '<p>Posted on '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
-							echo '<p>'.$row['postDesc'].'</p>';				
-							echo '<p><a href="viewpost.php?id='.$row['postID'].'">Read More</a></p>';				
+							echo '<div class="row single-article">';
+								echo '<div class="col-md-5" style="background:url(img/actu/fakear2.jpg); background-size: 100%;"></div>';
+								echo '<div class="col-md-6 pl-5">';
+									echo '<h2><a href="viewpost.php?id='.$row['postID'].'">'.$row['postTitle'].'</a></h2>';
+									echo '<p>Posté le '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
+									echo '<p class="border-content">'.$row['postDesc'].'</p>';				
+									echo '<p><a href="viewpost.php?id='.$row['postID'].'">Lire la suite</a></p>';				
+								echo '</div>';
+							echo '</div>';
 						echo '</div>';
-
 					}
 
 				} catch(PDOException $e) {
 				    echo $e->getMessage();
 				}
 			?>
+			<nav aria-label="Page navigation example text-center">
+				<ul class="pagination">
+					<li class="page-item"><a class="page-link" href="#">Previous</a></li>
+					<li class="page-item"><a class="page-link" href="#">1</a></li>
+					<li class="page-item"><a class="page-link" href="#">2</a></li>
+					<li class="page-item"><a class="page-link" href="#">3</a></li>
+					<li class="page-item"><a class="page-link" href="#">Next</a></li>
+				</ul>
+				</nav>
 		</div>
 	</div>
 
