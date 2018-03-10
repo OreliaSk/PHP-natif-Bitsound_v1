@@ -16,7 +16,7 @@
 </head>
 <body>
 
-	<div id="container-fluid">
+	<div id="container-fluid home">
 
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark px-5">
 			<div id="rotating-item-wrapper">
