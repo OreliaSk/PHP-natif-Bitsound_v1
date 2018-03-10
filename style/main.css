@@ -9,7 +9,7 @@
 @import url(festivals/festivals.css);
 @import url(festivals/viewfestival.css);
 
-@import url(admin_dashboard/admin_dashboard.css);
+@import url(admin_dashboard/login.css);
 
 
 
@@ -39,7 +39,7 @@
 	clear: both;
 }*/
 
-.error {
+/*.error {
 	padding: 0.75em;
 	margin: 0.75em;
 	border: 1px solid #990000;
@@ -48,7 +48,7 @@
 	background-color: #FDF0EB;
 	-moz-border-radius: 0.5em;
 	-webkit-border-radius: 0.5em;
-}
+}*/
 
 /*p,li {
 	color: #555555;
