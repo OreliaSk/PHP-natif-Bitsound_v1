@@ -11,11 +11,12 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
   <meta charset="utf-8">
   <title>Connexion administrateur</title>
   <link rel="stylesheet" href="../style/normalize.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="../style/main.css">
 </head>
 <body>
 
-<div id="login">
+<div class="login container-fluid pt-5" id="login">
 
 	<?php
 
@@ -33,15 +34,15 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
 		
 
 		} else {
-			$message = '<p class="error">Pseudo ou mot de passe invalide</p>';
+			$message = '<p class="alert alert-danger" role="alert">Pseudo ou mot de passe invalide</p>';
 		}
 
 	}// fin if submit
 
-	if(isset($message)){ echo $message; }
 	?>
 
-	<form action="" method="post">
+	<!--<form class="admin-connection" action="" method="post">
+		<?php if(isset($message)){ echo $message; } ?>
 		<p>
 			<label>Pseudo</label>
 			<input type="text" name="username" value=""  />
@@ -54,6 +55,19 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
 			<label></label>
 			<input type="submit" name="submit" value="Connexion"  />
 		</p>
+	</form>-->
+
+	<form class="admin-connection mx-auto p-3" action="" method="post">
+		<?php if(isset($message)){ echo $message; } ?>
+		<div class="form-group" >
+			<label for="pseudo">Pseudo</label>
+			<input type="text" class="form-control" id="pseudo" name="username">
+		</div>
+		<div class="form-group">
+			<label for="password">Mot de passe</label>
+			<input type="password" class="form-control" id="password" name="password">
+		</div>
+		<button type="submit" class="btn btn-custom d-block mx-auto" name="submit">Connexion</button>
 	</form>
 
 </div>
