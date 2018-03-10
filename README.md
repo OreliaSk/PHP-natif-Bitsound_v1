@@ -25,9 +25,10 @@ Don't forget to create a new database and edit your config.example.php file with
 
 What I used to build this app :
 
-* [Php v7.0.10](http://php.net/downloads.php) - PHP (natif)
+* [Php v7.1.14](http://php.net/downloads.php) - PHP (natif and procedural)
 * [Bootstrap v4.0](https://getbootstrap.com/) - CSS framework
 * [jQuery v3.3.1](https://jquery.com/) - JS librairy
+* [tinymce](https://www.tinymce.com/) - Full featured web editing (free)
 * [Balsamiq](https://balsamiq.com/) - Mockup tool
 * [Trello](https://trello.com/b/WqGHlGBr/blogelectrolu) - Online tool project management
 * [Slides.com](http://slides.com/oreliask/deck-5) - Presentation tools
