@@ -37,25 +37,25 @@ body {
 /***********************************************
 				NAVBAR
 ***********************************************/
-.home nav {
+nav {
   background-color: #000000;
   height: 25vh; }
-  .home nav .navbar-brand {
+  nav .navbar-brand {
     color: #fff !important;
     font-size: 3rem;
     letter-spacing: 1px; }
-    .home nav .navbar-brand:hover {
+    nav .navbar-brand:hover {
       color: #50FAA8 !important; }
-  .home nav .navbar-nav {
+  nav .navbar-nav {
     font-family: 'Futura Lt BT', Helvetica, Arial, sans serif;
     font-size: 1.25rem;
     letter-spacing: 1px; }
-  .home nav #rotating-item-wrapper {
+  nav #rotating-item-wrapper {
     position: relative;
     width: 80px;
     height: 80px;
     margin-right: 20px; }
-  .home nav .rotating-item {
+  nav .rotating-item {
     display: none;
     position: absolute;
     top: 0;
