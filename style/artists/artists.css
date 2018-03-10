@@ -1,0 +1,42 @@
+/***********************************************
+				VARIABLES
+***********************************************/
+/* TYPOGRAPHY */
+/* COLORS */
+/* HEIGHT */
+/* WIDTH */
+/***********************************************
+				MIXINS
+***********************************************/
+/*avec animation*/
+/* avec border-radius*/
+/*
+.[name_of-class] { @include radius(10px); }
+*/
+/*avec box-shadow*/
+/*avec les transitions*/
+/***********************************************
+				WRAPPER
+***********************************************/
+.artists-list {
+  color: #fff !important;
+  padding-top: 25vh; }
+  .artists-list h1 {
+    background: url(./../img/home/hands-light.jpg) repeat;
+    border: 2px solid green;
+    text-align: center;
+    height: 50vh; }
+  .artists-list .single-artist {
+    border-radius: 3px;
+    margin: 20px;
+    padding: 10px;
+    text-align: justify; }
+    .artists-list .single-artist .border-content {
+      border-top: 1px solid #50FAA8; }
+    .artists-list .single-artist a {
+      color: #fff; }
+      .artists-list .single-artist a:hover {
+        color: #50FAA8;
+        text-decoration: none; }
+
+/*# sourceMappingURL=artists.css.map */

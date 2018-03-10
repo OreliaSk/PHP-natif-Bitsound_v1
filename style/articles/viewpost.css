@@ -1,0 +1,37 @@
+/***********************************************
+				VARIABLES
+***********************************************/
+/* TYPOGRAPHY */
+/* COLORS */
+/* HEIGHT */
+/* WIDTH */
+/***********************************************
+				MIXINS
+***********************************************/
+/*avec animation*/
+/* avec border-radius*/
+/*
+.[name_of-class] { @include radius(10px); }
+*/
+/*avec box-shadow*/
+/*avec les transitions*/
+/***********************************************
+				WRAPPER
+***********************************************/
+.wrapper-post {
+  background-color: #fff; }
+  .wrapper-post .artist-detail {
+    margin-top: 25vh;
+    padding-top: 10vh; }
+    .wrapper-post .artist-detail .admin-avatar {
+      height: 25px;
+      width: 25px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%; }
+    .wrapper-post .artist-detail .admin-crown {
+      height: 13px;
+      width: 13px; }
+
+/*# sourceMappingURL=viewpost.css.map */
