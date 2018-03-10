@@ -24,7 +24,7 @@ if($row['postID'] == ''){
     <link rel="stylesheet" href="style/normalize.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="style/main.css">
-    <title>Blog - <?php echo $row['postTitle'];?></title>
+    <title>Article - <?php echo $row['postTitle'];?></title>
 </head>
 <body>
 
