@@ -33,7 +33,7 @@
 							echo '<div class="col-md-5" style="background:url(img/actu/fakear2.jpg); background-size: 100%;"></div>';
 							echo '<div class="col-md-6 pl-5">';
 								echo '<h2><a href="viewfestival.php?id='.$row['festivalId'].'">'.$row['title'].'</a></h2>';
-								echo '<p>Posted on '.date('jS M Y H:i:s', strtotime($row['created_at'])).'</p>';
+								echo '<p>Posté le '.date('jS M Y H:i:s', strtotime($row['created_at'])).'</p>';
 								echo '<p>'.$row['description'].'</p>';				
 								echo '<p><a href="viewfestival.php?id='.$row['festivalId'].'">Read More</a></p>';				
 							echo '</div>';
