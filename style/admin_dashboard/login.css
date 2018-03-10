@@ -1,0 +1,32 @@
+/***********************************************
+				VARIABLES
+***********************************************/
+/* TYPOGRAPHY */
+/* COLORS */
+/* HEIGHT */
+/* WIDTH */
+/***********************************************
+				MIXINS
+***********************************************/
+/*avec animation*/
+/* avec border-radius*/
+/*
+.[name_of-class] { @include radius(10px); }
+*/
+/*avec box-shadow*/
+/*avec les transitions*/
+.login {
+  background-color: #152B39;
+  height: 100vh; }
+  .login .admin-connection {
+    background-color: #fff;
+    width: 40vw;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px; }
+    .login .admin-connection .btn-custom {
+      background-color: #152B39;
+      color: #fff; }
+
+/*# sourceMappingURL=login.css.map */

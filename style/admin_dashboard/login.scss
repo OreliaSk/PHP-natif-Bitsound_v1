@@ -1,0 +1,15 @@
+@import '../_MainMixins.scss';
+
+.login{
+    background-color: #152B39;
+    height: 100vh;
+    .admin-connection{
+        background-color: $white;
+        width: 40vw;
+        @include radius(5px);
+        .btn-custom{
+            background-color: #152B39;
+            color: $white;
+        }
+    }
+}
