@@ -46,7 +46,7 @@
 			    echo $e->getMessage();
 			}
 		?>
-		<nav aria-label="Page navigation example">
+		<nav aria-label="Page navigation" >
 			<ul class="pagination">
 				<li class="page-item"><a class="page-link" href="#">Previous</a></li>
 				<li class="page-item"><a class="page-link" href="#">1</a></li>

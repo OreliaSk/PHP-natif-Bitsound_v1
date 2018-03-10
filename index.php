@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="blog about electro music">
 	<meta name="keywords" content="blog electro music">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,9 +21,9 @@
 
 		<nav class="navbar fixed-top navbar-expand-lg navbar-dark px-5">
 			<div id="rotating-item-wrapper">
-			<img class="rotating-item" src="img/home/navbar/tt.png" alt="signature" />
-			<img class="rotating-item" src="img/home/navbar/ss.png" alt="signature" />
-			<img class="rotating-item" src="img/home/navbar/cc.png" alt="signature" />
+				<img class="rotating-item" src="img/home/navbar/tt.png" alt="signature" />
+				<img class="rotating-item" src="img/home/navbar/ss.png" alt="signature" />
+				<img class="rotating-item" src="img/home/navbar/cc.png" alt="signature" />
 			</div>
 		  <a class="navbar-brand" href="index.php">BITSOUND.</a>
 		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
