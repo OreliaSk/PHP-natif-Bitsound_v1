@@ -7,32 +7,33 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Dashboard administrateur - Editer un artiste</title>
-  <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/main.css">
-  <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-  <script>
-          tinymce.init({
-              selector: "textarea",
-              plugins: [
-                  "advlist autolink lists link image charmap print preview anchor",
-                  "searchreplace visualblocks code fullscreen",
-                  "insertdatetime media table contextmenu paste"
-              ],
-              toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-          });
-  </script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+	<title>Dashboard administrateur - Editer un artiste</title>
+	<link rel="stylesheet" href="../style/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../style/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+	<script>
+			tinymce.init({
+				selector: "textarea",
+				plugins: [
+					"advlist autolink lists link image charmap print preview anchor",
+					"searchreplace visualblocks code fullscreen",
+					"insertdatetime media table contextmenu paste"
+				],
+				toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+			});
+	</script>
 </head>
 <body>
 
-<div id="wrapper">
+<div class="menu-admin" id="wrapper">
 
-	<?php include('menu.php');?>
-	<p><a href="./">Blog Admin Index</a></p>
+	<?php include('menu-header.php');?>
 
-	<h2>Editer un artiste</h2>
-
+	<h2 class="pb-3 pt-2 text-center">Editer un artiste</h2>
 
 	<?php
 
@@ -115,7 +116,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 	// Vérification des erreurs 
 	if(isset($error)){
 		foreach($error as $error){
-			echo $error.'<br />';
+			echo '<p class="alert alert-danger" role="alert">'.$error.'<p>';
 		}
 	}
 
@@ -144,40 +145,58 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 	?>
 
-	<form action='' method='post'>
+	<form action='' method='post' class="pb-5">
 		<input type='hidden' name='artistID' value='<?php echo $row['artistID'];?>'>
 
-		<p><label>Pseudo</label><br />
-		<input type='text' name='pseudo' value='<?php echo $row['pseudo'];?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Pseudo</label><br />
+			<input type='text' class="form-control" name='pseudo' value='<?php echo $row['pseudo'];?>'></p>
+		</div>
 
-		<p><label>Prénom</label><br />
-		<input type='text' name='first_name' value='<?php echo $row['first_name'];?>'></p>
-		
-		<p><label>Nom</label><br />
-		<input type='text' name='last_name' value='<?php echo $row['last_name'];?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Prénom</label><br />
+			<input type='text' class="form-control" name='first_name' value='<?php echo $row['first_name'];?>'></p>
+		</div>
 
-		<p><label>Description</label><br />
-		<textarea name='description' cols='60' rows='10'><?php echo $row['description'];?></textarea></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Nom</label><br />
+			<input type='text' class="form-control" name='last_name' value='<?php echo $row['last_name'];?>'></p>
+		</div>
 
-		<p><label>Biographie</label><br />
-		<textarea name='content' cols='60' rows='10'><?php echo $row['content'];?></textarea></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Description</label><br />
+			<textarea class="form-control" name='description' cols='60' rows='10'><?php echo $row['description'];?></textarea></p>
+		</div>
 
-		<p><label>Genre</label><br />
-		<input type='text' name='genre' value='<?php echo $row['genre'];?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Biographie</label><br />
+			<textarea class="form-control" name='content' cols='60' rows='10'><?php echo $row['content'];?></textarea></p>
+		</div>
 
-		<p><label>Photo</label><br />
-		<input type='text' name='picture' value='<?php echo $row['picture'];?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Genre</label><br />
+			<input type='text' class="form-control" name='genre' value='<?php echo $row['genre'];?>'></p>
+		</div>
 
-		<p><label>Sites internet</label><br />
-		<input type='text' name='website' value='<?php echo $row['website'];?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Photo</label><br />
+			<input type='text' class="form-control" name='picture' value='<?php echo $row['picture'];?>'></p>
+		</div>
 
-		<p><label>Vidéo</label><br />
-		<input type='text' name='video' value='<?php echo $row['video'];?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Sites internet</label><br />
+			<input type='text' class="form-control" name='website' value='<?php echo $row['website'];?>'></p>
+		</div>
 
-		<p><input type='submit' name='submit' value='Mettre à jour'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Vidéo</label><br />
+			<input type='text' class="form-control" name='video' value='<?php echo $row['video'];?>'></p>
+		</div>
+
+		<button class="btn btn-custom btn-add d-block mx-auto" type='submit' name='submit' >Mettre à jour</button>
 
 	</form>
-
+	<?php include('menu-footer.php');?>
 </div>
 
 </body>

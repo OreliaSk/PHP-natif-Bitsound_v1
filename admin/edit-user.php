@@ -5,21 +5,23 @@ require_once('../includes/config.php');
 if(!$user->is_logged_in()){ header('Location: login.php'); }
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Dashboard administrateur - Editer un utilisateur</title>
-  <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/main.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+	<title>Dashboard administrateur - Editer un utilisateur</title>
+	<link rel="stylesheet" href="../style/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../style/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 
-<div id="wrapper">
+<div class="menu-admin" id="wrapper">
 
-	<?php include('menu.php');?>
-	<p><a href="users.php">User Admin Index</a></p>
+	<?php include('menu-header.php');?>
 
-	<h2>Editer un utilisateur</h2>
+	<h2 class="pb-3 pt-2 text-center">Editer un utilisateur</h2>
 
 
 	<?php
@@ -106,7 +108,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 	//check for any errors
 	if(isset($error)){
 		foreach($error as $error){
-			echo $error.'<br />';
+			echo '<p class="alert alert-danger" role="alert">'.$error.'<p>';
 		}
 	}
 
@@ -122,25 +124,33 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 	?>
 
-	<form action='' method='post'>
-		<input type='hidden' name='memberID' value='<?php echo $row['memberID'];?>'>
+	<form action='' method='post' class="pb-5">
+		<input type='hidden' class="form-control" name='memberID' value='<?php echo $row['memberID'];?>'>
 
-		<p><label>Pseudo</label><br />
-		<input type='text' name='username' value='<?php echo $row['username'];?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Pseudo</label><br />
+			<input type='text' class="form-control" name='username' value='<?php echo $row['username'];?>'></p>
+		</div>
 
-		<p><label>Nouveau mot de passe (only to change)</label><br />
-		<input type='password' name='password' value=''></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Nouveau mot de passe</label><br />
+			<input type='password' class="form-control" name='password' value=''></p>
+		</div>
 
-		<p><label>Confirmer le mot de passe</label><br />
-		<input type='password' name='passwordConfirm' value=''></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Confirmer le mot de passe</label><br />
+			<input type='password' class="form-control" name='passwordConfirm' value=''></p>
+		</div>
 
-		<p><label>Email</label><br />
-		<input type='text' name='email' value='<?php echo $row['email'];?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Email</label><br />
+			<input type='text' class="form-control" name='email' value='<?php echo $row['email'];?>'></p>
+		</div>
 
-		<p><input type='submit' name='submit' value='Mise à jour de l'utilisateur'></p>
+		<button class="btn btn-custom btn-add d-block mx-auto" type='submit' name='submit'>Mettre à jour</button>
 
 	</form>
-
+	<?php include('menu-footer.php');?>
 </div>
 
 </body>

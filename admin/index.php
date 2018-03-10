@@ -25,15 +25,16 @@ if(isset($_GET['delpost'])){
 	<link rel="stylesheet" href="../style/normalize.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="../style/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script language="JavaScript" type="text/javascript">
-  // Fonction javascript pour pop-up confirmation suppression
-  function delpost(id, title)
-  {
-	  if (confirm("Êtes-vous sûr(e) de vouloir supprimmer l'article '" + title + "' ?"))
-	  {
-	  	window.location.href = 'index.php?delpost=' + id;
-	  }
-  }
+	// Fonction javascript pour pop-up confirmation suppression
+	function delpost(id, title)
+	{
+		if (confirm("Êtes-vous sûr(e) de vouloir supprimmer l'article '" + title + "' ?"))
+		{
+			window.location.href = 'index.php?delpost=' + id;
+		}
+	}
   </script>
 </head>
 <body>
@@ -48,7 +49,7 @@ if(isset($_GET['delpost'])){
 		?>
 		<?php include('menu-header.php');?>
 
-		<table>
+		<table class="mt-4 mb-4 content-admin">
 			<tr>
 				<th>Titre</th>
 				<th>Date</th>
@@ -65,7 +66,7 @@ if(isset($_GET['delpost'])){
 						?>
 
 						<td>
-							<a href="edit-post.php?id=<?php echo $row['postID'];?>">Editer</a> | 
+							<a href="edit-post.php?id=<?php echo $row['postID'];?>">Editer</a>   
 							<a href="javascript:delpost('<?php echo $row['postID'];?>','<?php echo $row['postTitle'];?>')">Supprimer</a>
 						</td>
 						
@@ -78,9 +79,7 @@ if(isset($_GET['delpost'])){
 				}
 			?>
 		</table>
-		<button class="btn btn-custom">
-			<a href='add-post.php'>Ajouter un article</a>
-		</button>
+		<a class="btn btn-custom btn-add" href='add-post.php'>Ajouter un article</a>
 		<?php include('menu-footer.php');?>
 
 </div>

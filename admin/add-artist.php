@@ -7,31 +7,33 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Dashboard administrateur - Ajouter un artiste</title>
-  <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/main.css">
-  <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-  <script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Dashboard administrateur - Ajouter un artiste</title>
+	<link rel="stylesheet" href="../style/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../style/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+	<script>
 	tinymce.init({
-	  selector: "textarea",
-	  plugins: [
-	      "advlist autolink lists link image charmap print preview anchor",
-	      "searchreplace visualblocks code fullscreen",
-	      "insertdatetime media table contextmenu paste"
-	  ],
-	  toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+		selector: "textarea",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
 	});
-  </script>
+	</script>
 </head>
 <body>
 
-<div id="wrapper">
+<div class="menu-admin" id="wrapper">
 
-	<?php include('menu.php');?>
-	<p><a href="users.php">Blog Admin Index</a></p>
+	<?php include('menu-header.php');?>
 
-	<h2>Ajouter un artiste</h2>
+	<h2 class="pb-3 pt-2 text-center">Ajouter un artiste</h2>
 
 	<?php
 
@@ -94,42 +96,59 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 	// vérification des erreurs
 	if(isset($error)){
 		foreach($error as $error){
-			echo '<p class="error">'.$error.'</p>';
+			echo '<p class="alert alert-danger" role="alert">'.$error.'</p>';
 		}
 	}
 	?>
 
-	<form action='' method='post'>
+	<form action='' method='post' class="pb-5">
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Pseudo</label><br />
+			<input type='text' class="form-control" name='pseudo' value='<?php if(isset($error)){ echo $_POST['pseudo'];}?>'></p>
+		</div>
 
-		<p><label>Pseudo</label><br />
-		<input type='text' name='pseudo' value='<?php if(isset($error)){ echo $_POST['pseudo'];}?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Prénom</label><br />
+			<input type='text' class="form-control" name='first_name' value='<?php if(isset($error)){ echo $_POST['first_name'];}?>'></p>
+		</div>
 
-		<p><label>Prénom</label><br />
-		<input type='text' name='first_name' value='<?php if(isset($error)){ echo $_POST['first_name'];}?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Nom</label><br />
+			<input type='text' class="form-control" name='last_name' value='<?php if(isset($error)){ echo $_POST['last_name'];}?>'></p>
+		</div>
 
-		<p><label>Nom</label><br />
-		<input type='text' name='last_name' value='<?php if(isset($error)){ echo $_POST['last_name'];}?>'></p>
-
-		<p><label>Description</label><br />
-		<textarea name='description' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['description'];}?></textarea></p>
-
-		<p><label>Biographie</label><br />
-		<textarea name='content' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['content'];}?></textarea></p>
-
-		<p><label>Genre</label><br />
-		<input type='text' name='genre' value='<?php if(isset($error)){ echo $_POST['genre'];}?>'></p>
-
-		<p><label>Photo</label><br />
-		<input type='text' name='picture' value='<?php if(isset($error)){ echo $_POST['picture'];}?>'></p>
-
-		<p><label>Lien web</label><br />
-		<input type='text' name='website' value='<?php if(isset($error)){ echo $_POST['website'];}?>'></p>
-
-		<p><label>Vidéo</label><br />
-		<input type='text' name='video' value='<?php if(isset($error)){ echo $_POST['video'];}?>'></p>
+		<div class="form-group">
+			<p class="font-weight-bold"><label>Description</label><br />
+			<textarea class="form-control" name='description' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['description'];}?></textarea></p>
+		</div>
 		
-		<p><input type='submit' name='submit' value='Ajouter un utilisateur'></p>
+		<div class="form-group">
+			<p class="font-weight-bold"><label>Biographie</label><br />
+			<textarea class="form-control" name='content' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['content'];}?></textarea></p>
+		</div>	
+
+		<div class="form-group">
+			<p class="font-weight-bold"><label>Genre</label><br />
+			<input type='text' class="form-control" name='genre' value='<?php if(isset($error)){ echo $_POST['genre'];}?>'></p>
+		</div>	
+
+		<div class="form-group">
+			<p class="font-weight-bold"><label>Photo</label><br />
+			<input type='text' class="form-control" name='picture' value='<?php if(isset($error)){ echo $_POST['picture'];}?>'></p>
+		</div>	
+
+		<div class="form-group">
+			<p class="font-weight-bold"><label>Lien web</label><br />
+			<input type='text' class="form-control" name='website' value='<?php if(isset($error)){ echo $_POST['website'];}?>'></p>
+		</div>	
+
+		<div class="form-group">
+			<p class="font-weight-bold"><label>Vidéo</label><br />
+			<input type='text' class="form-control" name='video' value='<?php if(isset($error)){ echo $_POST['video'];}?>'></p>
+		</div>
+
+		<button class="btn btn-custom btn-add d-block mx-auto" type='submit' name='submit'>Ajouter un artiste</button>
 
 	</form>
-
+	<?php include('menu-footer.php');?>
 </div>

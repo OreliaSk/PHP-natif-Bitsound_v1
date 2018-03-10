@@ -22,36 +22,38 @@ if(isset($_GET['deluser'])){
 
 ?>
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Dashboard administrateur - Utilisateur</title>
-  <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/main.css">
-  <script language="JavaScript" type="text/javascript">
-  function deluser(id, title)
-  {
-	  if (confirm("Are you sure you want to delete '" + title + "'"))
-	  {
-	  	window.location.href = 'users.php?deluser=' + id;
-	  }
-  }
-  </script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Dashboard administrateur - Administrateurs</title>
+	<link rel="stylesheet" href="../style/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../style/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script language="JavaScript" type="text/javascript">
+	function deluser(id, title)
+	{
+		if (confirm("Are you sure you want to delete '" + title + "'"))
+		{
+		window.location.href = 'users.php?deluser=' + id;
+		}
+	}
+	</script>
 </head>
 <body>
 
-	<div id="wrapper">
+	<div  class="menu-admin" id="wrapper">
 
-	<?php include('menu.php');?>
+		<?php 
+		//show message from add / edit page
+		if(isset($_GET['action'])){ 
+			echo '<h3>User '.$_GET['action'].'.</h3>'; 
+		} 
+		?>
+		<?php include('menu-header.php');?>
 
-	<?php 
-	//show message from add / edit page
-	if(isset($_GET['action'])){ 
-		echo '<h3>User '.$_GET['action'].'.</h3>'; 
-	} 
-	?>
-
-	<table>
+	<table class="mt-4 mb-4 content-admin">
 	<tr>
 		<th>Pseudo</th>
 		<th>Email</th>
@@ -71,7 +73,7 @@ if(isset($_GET['deluser'])){
 				<td>
 					<a href="edit-user.php?id=<?php echo $row['memberID'];?>">Editer</a> 
 					<?php if($row['memberID'] != 1){?>
-						| <a href="javascript:deluser('<?php echo $row['memberID'];?>','<?php echo $row['username'];?>')">Supprimer</a>
+					<a href="javascript:deluser('<?php echo $row['memberID'];?>','<?php echo $row['username'];?>')">Supprimer</a>
 					<?php } ?>
 				</td>
 				
@@ -85,10 +87,14 @@ if(isset($_GET['deluser'])){
 		}
 	?>
 	</table>
+	<a class="btn btn-custom btn-add" href='add-user.php'>Ajouter un administrateur</a>
 
-	<p><a href='add-user.php'>Ajouter un utilisateur</a></p>
+	<?php include('menu-footer.php');?>
+
 
 </div>
-
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

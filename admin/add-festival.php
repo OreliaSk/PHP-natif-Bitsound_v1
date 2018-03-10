@@ -7,31 +7,32 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Dashboard administrateur - Ajouter un festival</title>
-  <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/main.css">
-  <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-  <script>
+	<meta charset="utf-8">
+	<title>Dashboard administrateur - Ajouter un festival</title>
+	<link rel="stylesheet" href="../style/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../style/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+	<script>
 	tinymce.init({
-	  selector: "textarea",
-	  plugins: [
-	      "advlist autolink lists link image charmap print preview anchor",
-	      "searchreplace visualblocks code fullscreen",
-	      "insertdatetime media table contextmenu paste"
-	  ],
-	  toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+		selector: "textarea",
+		plugins: [
+			"advlist autolink lists link image charmap print preview anchor",
+			"searchreplace visualblocks code fullscreen",
+			"insertdatetime media table contextmenu paste"
+		],
+		toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
 	});
-  </script>
+	</script>
 </head>
 <body>
 
-<div id="wrapper">
+<div class="menu-admin" id="wrapper">
 
-	<?php include('menu.php');?>
-	<p><a href="users.php">Blog Admin Index</a></p>
+	<?php include('menu-header.php');?>
 
-	<h2>Ajouter un festival</h2>
+	<h2 class="pb-3 pt-2 text-center">Ajouter un festival</h2>
 
 	<?php
 
@@ -84,24 +85,30 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 	// vérification des erreurs
 	if(isset($error)){
 		foreach($error as $error){
-			echo '<p class="error">'.$error.'</p>';
+			echo '<p class="alert alert-danger" role="alert">'.$error.'</p>';
 		}
 	}
 	?>
 
-	<form action='' method='post'>
+	<form action='' method='post' class="pb-5">
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Nom du festival</label><br />
+			<input type='text' class="form-control" name='title' value='<?php if(isset($error)){ echo $_POST['title'];}?>'></p>
+		</div>
 
-		<p><label>Nom du festival</label><br />
-		<input type='text' name='title' value='<?php if(isset($error)){ echo $_POST['title'];}?>'></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Description</label><br />
+			<textarea class="form-control" name='description' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['description'];}?></textarea></p>
+		</div>
 
-		<p><label>Description</label><br />
-		<textarea name='description' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['description'];}?></textarea></p>
+		<div class="form-group col">
+			<p class="font-weight-bold"><label>Contenu du festival</label><br />
+			<textarea class="form-control" name='content' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['content'];}?></textarea></p>
+		</div>
 
-		<p><label>Contenu du festival</label><br />
-		<textarea name='content' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['content'];}?></textarea></p>
-		
-		<p><input type='submit' name='submit' value='Ajouter un festival'></p>
+		<button class="btn btn-custom btn-add" type='submit' name='submit' >Ajouter un festival</button>
 
 	</form>
+	<?php include('menu-footer.php');?>
 
 </div>

@@ -7,32 +7,33 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 <!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <title>Dashboard administrateur - Editer un article</title>
-  <link rel="stylesheet" href="../style/normalize.css">
-  <link rel="stylesheet" href="../style/main.css">
-  <script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
-  <script>
-          tinymce.init({
-              selector: "textarea",
-              plugins: [
-                  "advlist autolink lists link image charmap print preview anchor",
-                  "searchreplace visualblocks code fullscreen",
-                  "insertdatetime media table contextmenu paste"
-              ],
-              toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
-          });
-  </script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+	<title>Dashboard administrateur - Editer un article</title>
+	<link rel="stylesheet" href="../style/normalize.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../style/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="//tinymce.cachefly.net/4.0/tinymce.min.js"></script>
+	<script>
+			tinymce.init({
+				selector: "textarea",
+				plugins: [
+					"advlist autolink lists link image charmap print preview anchor",
+					"searchreplace visualblocks code fullscreen",
+					"insertdatetime media table contextmenu paste"
+				],
+				toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+			});
+	</script>
 </head>
 <body>
 
-<div id="wrapper">
+<div class="menu-admin" id="wrapper">
 
-	<?php include('menu.php');?>
-	<p><a href="./">Blog Admin Index</a></p>
+	<?php include('menu-header.php');?>
 
-	<h2>Editer un article</h2>
-
+	<h2 class="pb-3 pt-2 text-center">Editer un article</h2>
 
 	<?php
 
@@ -100,7 +101,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 	// Vérification des erreurs 
 	if(isset($error)){
 		foreach($error as $error){
-			echo $error.'<br />';
+			echo '<p class="alert alert-danger" role="alert">'.$error.'<p>';
 		}
 	}
 
@@ -116,22 +117,28 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 	?>
 
-	<form action='' method='post'>
+	<form action='' method='post' class="pb-5">
 		<input type='hidden' name='postID' value='<?php echo $row['postID'];?>'>
 
-		<p><label>Titre</label><br />
-		<input type='text' name='postTitle' value='<?php echo $row['postTitle'];?>'></p>
+		<div class="form-group col">
+			<p><label>Titre</label><br />
+			<input type='text' class="form-control" name='postTitle' value='<?php echo $row['postTitle'];?>'></p>
+		</div>
 
-		<p><label>Description</label><br />
-		<textarea name='postDesc' cols='60' rows='10'><?php echo $row['postDesc'];?></textarea></p>
+		<div class="form-group col">
+			<p><label>Description</label><br />
+			<textarea class="form-control" name='postDesc' cols='60' rows='10'><?php echo $row['postDesc'];?></textarea></p>
+		</div>
 
-		<p><label>Contenu de l'article</label><br />
-		<textarea name='postCont' cols='60' rows='10'><?php echo $row['postCont'];?></textarea></p>
+		<div class="form-group col">
+			<p><label>Contenu de l'article</label><br />
+			<textarea class="form-control" name='postCont' cols='60' rows='10'><?php echo $row['postCont'];?></textarea></p>
+		</div>
 
-		<p><input type='submit' name='submit' value='Mettre à jour'></p>
+		<button class="btn btn-custom btn-add d-block mx-auto" type='submit' name='submit' >Mettre à jour</button>
 
 	</form>
-
+	<?php include('menu-footer.php');?>
 </div>
 
 </body>
