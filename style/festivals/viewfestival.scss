@@ -1,0 +1,22 @@
+@import '../_MainMixins.scss';
+
+/***********************************************
+				WRAPPER
+***********************************************/
+.wrapper-festival{
+    background-color: $white;
+    .festival-detail{ 
+    margin-top: 25vh;
+    padding-top: 10vh;
+    .admin-avatar{
+        height: 25px;
+        width: 25px;
+        @include radius(50%);
+    }
+    .admin-crown{
+        height: 13px;
+        width: 13px;
+    }
+}
+}
+

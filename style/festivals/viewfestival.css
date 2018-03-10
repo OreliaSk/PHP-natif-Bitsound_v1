@@ -1,0 +1,37 @@
+/***********************************************
+				VARIABLES
+***********************************************/
+/* TYPOGRAPHY */
+/* COLORS */
+/* HEIGHT */
+/* WIDTH */
+/***********************************************
+				MIXINS
+***********************************************/
+/*avec animation*/
+/* avec border-radius*/
+/*
+.[name_of-class] { @include radius(10px); }
+*/
+/*avec box-shadow*/
+/*avec les transitions*/
+/***********************************************
+				WRAPPER
+***********************************************/
+.wrapper-festival {
+  background-color: #fff; }
+  .wrapper-festival .festival-detail {
+    margin-top: 25vh;
+    padding-top: 10vh; }
+    .wrapper-festival .festival-detail .admin-avatar {
+      height: 25px;
+      width: 25px;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      -ms-border-radius: 50%;
+      border-radius: 50%; }
+    .wrapper-festival .festival-detail .admin-crown {
+      height: 13px;
+      width: 13px; }
+
+/*# sourceMappingURL=viewfestival.css.map */
