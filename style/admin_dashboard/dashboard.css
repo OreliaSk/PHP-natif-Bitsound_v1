@@ -1,0 +1,58 @@
+/***********************************************
+				VARIABLES
+***********************************************/
+/* TYPOGRAPHY */
+/* COLORS */
+/* HEIGHT */
+/* WIDTH */
+/***********************************************
+				MIXINS
+***********************************************/
+/*avec animation*/
+/* avec border-radius*/
+/*
+.[name_of-class] { @include radius(10px); }
+*/
+/*avec box-shadow*/
+/*avec les transitions*/
+.menu-admin .navbar {
+  background-color: #152B39; }
+.menu-admin .sidebar {
+  background-color: #F8F9FA;
+  height: 93.5vh;
+  padding-left: 0;
+  padding-right: 0; }
+  .menu-admin .sidebar li a {
+    color: #000; }
+    .menu-admin .sidebar li a:hover {
+      color: #fff; }
+  .menu-admin .sidebar li:hover {
+    background-color: #152B39; }
+.menu-admin .main {
+  background-color: #fff; }
+  .menu-admin .main h1 {
+    color: #000; }
+  .menu-admin .main .content-admin a {
+    color: #152B39;
+    border: 1px solid #152B39;
+    margin: 4px;
+    padding: 3px;
+    text-decoration: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    border-radius: 3px; }
+    .menu-admin .main .content-admin a:hover {
+      background-color: #152B39;
+      color: #fff;
+      transition: all ease .2s; }
+  .menu-admin .main .btn-add {
+    background-color: #152B39;
+    color: #fff; }
+    .menu-admin .main .btn-add:hover {
+      background-color: #fff;
+      border: 1px solid #152B39;
+      color: #152B39;
+      transition: all ease .3s; }
+
+/*# sourceMappingURL=dashboard.css.map */

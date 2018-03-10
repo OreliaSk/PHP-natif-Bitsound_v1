@@ -1,5 +1,56 @@
 @import '../_MainMixins.scss';
 
 .menu-admin{
-    background-color: $white;
+    .navbar{
+        background-color: $dark-blue;
+    }
+    .sidebar{
+        background-color: #F8F9FA;
+        height: 93.5vh;
+        padding-left: 0;
+        padding-right: 0;
+        li{
+            a{
+            color: $black ;
+                &:hover{
+                    color: $white;
+                }
+            }
+            &:hover{
+                background-color:$dark-blue;
+            }
+        }     
+    }
+
+    .main{
+        background-color: $white;
+        h1{
+        color: $black;
+    }
+    .content-admin{
+        a{
+            color: $dark-blue;
+            border: 1px solid $dark-blue;
+            margin: 4px;
+            padding: 3px;
+            text-decoration: none;
+            @include radius(3px);
+            &:hover{
+                background-color: $dark-blue;
+                color: $white;
+                transition: all ease .2s;
+            }
+    }
+    }
+    .btn-add{
+        background-color: $dark-blue;
+        color: $white;
+        &:hover{
+            background-color: $white;
+            border: 1px solid $dark-blue;
+            color: $dark-blue;
+            transition: all ease .3s;
+        }
+    }
+}
 }
