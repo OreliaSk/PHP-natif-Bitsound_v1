@@ -7,7 +7,7 @@ The app will contain :
 * Articles page
 * Artists page
 * Festival page
-* Contact form
+* Admin dashboard
 
 Take a look !
 You can see screenshots of the app just [here](https://github.com/OreliaSk/PHP-natif-Bitsound_v1/tree/master/screenshots)
