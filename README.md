@@ -10,6 +10,7 @@ The app will contain :
 * Contact form
 
 Take a look !
+You can see screenshots of the app just [here](https://github.com/OreliaSk/PHP-natif-Bitsound_v1/tree/master/screenshots)
 
 ## Getting Started
 
