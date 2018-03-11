@@ -27,6 +27,7 @@ What I used to build this app :
 
 * [Php v7.1.14](http://php.net/downloads.php) - PHP (natif and procedural)
 * [Bootstrap v4.0](https://getbootstrap.com/) - CSS framework
+* [Sass](https://sass-lang.com/) - Css preprocessor
 * [jQuery v3.3.1](https://jquery.com/) - JS librairy
 * [tinymce](https://www.tinymce.com/) - Full featured web editing (free)
 * [Balsamiq](https://balsamiq.com/) - Mockup tool
