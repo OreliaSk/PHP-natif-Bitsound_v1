@@ -1,0 +1,40 @@
+
+/***********************************************
+				NAVBAR
+***********************************************/
+
+nav{
+	background-color: $black;
+	height: $mh;
+
+	.navbar-brand{
+		color: $white !important;
+		font-size: 3rem;
+		letter-spacing: 1px;
+
+		&:hover{
+			color: $green !important; 
+		}
+	}
+
+	.navbar-nav{
+		font-family: 'Futura Lt BT', Helvetica, Arial, sans serif;
+		font-size: 1.25rem;
+		letter-spacing: 1px;
+	}
+
+	#rotating-item-wrapper {
+		position: relative;
+		width: 80px;
+		height: 80px;
+		margin-right: 20px;
+	}
+	.rotating-item {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 80px;
+		height: 80px;
+	}
+}

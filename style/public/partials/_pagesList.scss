@@ -1,0 +1,24 @@
+/**********  EXTENDS **********/
+%pages_list{
+    color: $white !important;
+	padding-top: $mh;
+}
+%page_h1{
+    border: 2px solid green;
+    text-align: center;
+    height: $ml-h;
+}
+%single_page{
+    border-radius: 3px;
+    margin: 20px;
+    padding: 10px;
+    text-align: justify;
+}
+%border_content_page{
+    border-top: 1px solid $green;
+}
+%link_page{color: $white;}
+%link_page_hover{
+    color: $green;
+    text-decoration: none;
+}

@@ -1,0 +1,32 @@
+@import '../partials/_mixins';
+@import '../partials/_general';
+@import '../partials/_navbar';
+@import '../partials/_pagesList';
+
+/***********************************************
+				WRAPPER
+***********************************************/
+
+.articles-list{
+	@extend %pages_list;
+	.bloc-img{
+		background: url(../../../img/home/hands-light.jpg);
+		background-color: red;
+		h1{
+			@extend %page_h1;
+		}
+	}
+	.single-article{
+		@extend %single_page;
+		.border-content{
+		@extend %border_content_page;
+		}
+		a{
+			@extend %link_page;
+			&:hover{
+				@extend %link_page_hover;
+			}
+		}
+	}
+
+}

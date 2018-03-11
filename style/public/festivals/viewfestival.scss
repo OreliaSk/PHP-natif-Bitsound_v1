@@ -1,0 +1,24 @@
+@import '../partials/_mixins';
+@import '../partials/_general';
+@import '../partials/_navbar';
+@import '../partials/_pagesDetail';
+
+/***********************************************
+				WRAPPER
+***********************************************/
+.wrapper-festival{
+    @extend %wrapper_page;
+
+    .festival-detail{ 
+        @extend %wrapper_detail;
+        .admin-avatar{
+            @extend %admin_avatar;
+            @include radius(50%);
+        }
+
+        .admin-crown{
+            @extend %admin_crown;
+        }
+    }
+}
+

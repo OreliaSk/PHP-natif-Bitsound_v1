@@ -1,0 +1,36 @@
+@import '../partials/_mixins';
+@import '../partials/_general';
+@import '../partials/_navbar';
+
+/***********************************************
+				WRAPPER
+***********************************************/
+
+.artists-list{
+	color: $white !important;
+	padding-top: $mh;
+
+	h1{
+		background: url(./../img/home/hands-light.jpg) repeat;
+		border: 2px solid green;
+		text-align: center;
+		height: 50vh;
+	}
+	.single-artist{
+		border-radius: 3px;
+		margin: 20px;
+		padding: 10px;
+		text-align: justify;
+		.border-content{
+		border-top: 1px solid $green;
+		}
+		a{
+			color: $white;
+			&:hover{
+				color: $green;
+				text-decoration: none;
+			}
+		}
+	}
+
+}

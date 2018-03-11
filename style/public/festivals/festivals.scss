@@ -1,0 +1,29 @@
+@import '../partials/_mixins';
+@import '../partials/_general';
+@import '../partials/_navbar';
+@import '../partials/_pagesList';
+
+/***********************************************
+				WRAPPER
+***********************************************/
+
+.festivals-list{
+	@extend %pages_list;
+	h1{
+		background: url(./../img/home/hands-light.jpg) repeat;
+		@extend %page_h1;
+	}
+	.single-festival{
+		@extend %single_page;
+		.border-content{
+		@extend %border_content_page;
+		}
+		a{
+			@extend %link_page;
+			&:hover{
+				@extend %link_page_hover;
+			}
+		}
+	}
+
+}
