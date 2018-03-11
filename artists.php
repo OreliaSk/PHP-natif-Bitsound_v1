@@ -2,22 +2,13 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="blog about electro music">
-	<meta name="keywords" content="blog electro music">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--[if IE]>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<![endif]-->
-    <link rel="stylesheet" href="style/normalize.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/main.css">
+    <?php include('partials/head.php');?>
     <title>Artistes</title>
 </head>
 <body>
 
 	<div id="wrapper">
-		<?php include('navbar.php');?>
+		<?php include('partials/navbar.php');?>
 		<div class="artists-list container">
 		<h1>Artistes</h1>
 		<hr />
@@ -48,10 +39,7 @@
 		?>
 
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-	<script src="js/rotating.js"></script>
+	<?php include('partials/scripts.php'); ?>
 
 </body>
 </html>

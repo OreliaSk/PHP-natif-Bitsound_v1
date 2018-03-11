@@ -14,44 +14,40 @@ if($row['artistId'] == ''){
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="blog about electro music">
-	<meta name="keywords" content="blog electro music">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--[if IE]>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<![endif]-->
-    <link rel="stylesheet" href="style/normalize.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style/main.css">
+	<?php include('partials/head.php'); ?>
     <title>Artiste - <?php echo $row['pseudo'];?></title>
 </head>
 <body>
 
-	<div id="wrapper">
-		<?php include('navbar.php'); ?>
-		<h1>Festival</h1>
-		<hr />
-		<p><a href="./">Blog Index</a></p>
+	<div class="container-fluid wrapper-artist" id="wrapper">
+		<div class="container artist-detail">
+			<?php include('partials/navbar.php'); ?>
+			<h1 class="text-center"><?php echo $row['pseudo'];?></h1>
+			<hr />
 
-		<!-- Affichage d'un seul artiste (détail) -->
-		<?php	
-			echo '<div>';
-				echo '<h2>'.$row['pseudo'].'</h2>';
-				echo '<p>Posted on '.date('j M Y', strtotime($row['created_at'])).'</p>';
-				echo '<p>'.$row['description'].'</p>';
-				echo '<p>'.$row['content'].'</p>';	
-				echo '<p>'.$row['genre'].'</p>';
-				echo '<p>'.$row['picture'].'</p>';
-				echo '<p>'.$row['website'].'</p>';
-				echo '<p>'.$row['video'].'</p>';			
-			echo '</div>';
-		?>
-
+			<!-- Affichage d'un seul artiste (détail) -->
+			<?php	
+				echo '<div>';
+					echo '<p class="text-center">
+							<img class="admin-avatar" src="img/admin/user.png" alt="admin-avatar" />
+							Admin 
+							<img class="admin-crown" src="img/admin/crown.png" alt="crown-admin"/>
+							| '.date('j M Y', strtotime($row['created_at'])).
+							'</p>';
+					echo '<p>'.$row['description'].'</p>';
+					echo '<p>'.$row['content'].'</p>';	
+					echo '<p>'.$row['genre'].'</p>';
+					echo '<p>'.$row['picture'].'</p>';
+					echo '<p>'.$row['website'].'</p>';
+					echo '<p>'.$row['video'].'</p>';			
+				echo '</div>';
+			?>
+		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
-	<script src="js/rotating.js"></script>
+	<footer>
+		<div>Icons made by <a href="https://www.flaticon.com/authors/picol" title="Picol">Picol</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+	</footer>
+
+	<?php include('partials/scripts.php'); ?>
 </body>
 </html>
