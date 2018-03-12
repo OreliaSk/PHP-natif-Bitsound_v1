@@ -18,16 +18,16 @@
 			<?php
 				try {
 
-					$stmt = $db->query('SELECT postID, postTitle, postDesc, postDate FROM blog_posts ORDER BY postID DESC');
+					$stmt = $db->query('SELECT postID, title, description, created_at FROM blog_posts ORDER BY postID DESC');
 					while($row = $stmt->fetch()){
 						
 						echo '<div>';
 							echo '<div class="row single-article">';
 								echo '<div class="col-md-5" style="background:url(img/actu/fakear2.jpg); background-size: 100%;"></div>';
 								echo '<div class="col-md-6 pl-5">';
-									echo '<h2><a href="viewpost.php?id='.$row['postID'].'">'.$row['postTitle'].'</a></h2>';
-									echo '<p>Posté le '.date('jS M Y H:i:s', strtotime($row['postDate'])).'</p>';
-									echo '<p class="border-content">'.$row['postDesc'].'</p>';				
+									echo '<h2><a href="viewpost.php?id='.$row['postID'].'">'.$row['title'].'</a></h2>';
+									echo '<p>Posté le '.date('jS M Y H:i:s', strtotime($row['created_at'])).'</p>';
+									echo '<p class="border-content">'.$row['description'].'</p>';				
 									echo '<p><a href="viewpost.php?id='.$row['postID'].'">Lire la suite</a></p>';				
 								echo '</div>';
 							echo '</div>';
