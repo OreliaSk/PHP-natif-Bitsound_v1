@@ -1,6 +1,6 @@
 <?php require('includes/config.php'); 
 
-$stmt = $db->prepare('SELECT postID, postTitle, postCont, postDate FROM blog_posts WHERE postID = :postID');
+$stmt = $db->prepare('SELECT postID, title, content, created_at FROM blog_posts WHERE postID = :postID');
 $stmt->execute(array(':postID' => $_GET['id']));
 $row = $stmt->fetch();
 
@@ -15,14 +15,14 @@ if($row['postID'] == ''){
 <html lang="fr">
 <head>
     <?php include('partials/head.php');?>
-    <title>Article - <?php echo $row['postTitle'];?></title>
+    <title>Article - <?php echo $row['title'];?></title>
 </head>
 <body>
 
 	<div class="container-fluid wrapper-post" id="wrapper">
 		<div class="container artist-detail">
 			<?php include('partials/navbar.php'); ?>
-			<h1 class="text-center"><?php echo $row['postTitle'];?></h1>
+			<h1 class="text-center"><?php echo $row['title'];?></h1>
 			<hr />
 
 			<!-- Affichage d'un seul article (détail) -->
@@ -32,9 +32,9 @@ if($row['postID'] == ''){
 						<img class="admin-avatar" src="img/admin/user.png" alt="admin-avatar" />
 						Admin 
 						<img class="admin-crown" src="img/admin/crown.png" alt="crown-admin"/>
-						 | '.date('j M Y', strtotime($row['postDate'])).
+						 | '.date('j M Y', strtotime($row['created_at'])).
 						'</p>';
-					echo '<p>'.$row['postCont'].'</p>';				
+					echo '<p>'.$row['content'].'</p>';				
 				echo '</div>';
 			?>
 		</div>
