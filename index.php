@@ -1,4 +1,5 @@
 <?php require('includes/config.php');?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,6 +10,54 @@
 
 	<div id="container-fluid home">
 		<?php include('partials/navbar.php');?>
+		
+		<?php
+		$pseudo = '';
+		$email = '';
+		$content ='';
+
+		// Si le formulaire a été envoyé
+		if(isset($_POST['submit'])){
+			$_POST = array_map( 'stripslashes', $_POST );
+
+			// Collect des datas
+			extract($_POST);
+
+			// Validation basique
+			if($pseudo ==''){
+				$error[] = 'Veuillez entrer un nom';
+			}
+
+			if($email ==''){
+				$error[] = 'Veuillez remplir votre email';
+			}
+
+			if($content ==''){
+				$error[] = 'Veuillez écrire un message';
+			}
+
+			if(!isset($error)){
+				try {
+
+					// Insertion dans bdd
+					$stmt = $db->prepare('INSERT INTO blog_messages (pseudo, email, content,created_at) VALUES (:pseudo, :email, :content, :created_at)') ;
+					$stmt->execute(array(
+						':pseudo' => $pseudo,
+						':email' => $email,
+						':content' => $content,
+						':created_at' => date('Y-m-d H:i:s')
+					));
+
+					// Redirection par la page d'index 
+					header('Location: index.php?action=added');
+					exit;
+
+				} catch(PDOException $e) {
+					echo $e->getMessage();
+				}
+			}
+		}
+		?>
 
 		<div class="container menu">
 			<div class="row">
@@ -72,13 +121,13 @@
 					<div class="col-sm-4 infos pl-5 text-justify">
 						<?php	
 							try{
-								$stmt = $db->query('SELECT postId, postTitle, postDesc, postDate FROM blog_posts ORDER BY postId DESC');
+								$stmt = $db->query('SELECT postId, title, description, created_at FROM blog_posts ORDER BY postId DESC');
 								$row = $stmt->fetch();
 
 								echo '<div>';
-									echo '<h2><a href="viewpost.php?id='.$row['postId'].'">'.$row['postTitle'].'</a></h2>';
-									echo '<p>Posté le '.date('j M Y', strtotime($row['postDate'])).'</p>';
-									echo '<p>'.$row['postDesc'].'</p>';
+									echo '<h2><a href="viewpost.php?id='.$row['postId'].'">'.$row['title'].'</a></h2>';
+									echo '<p>Posté le '.date('j M Y', strtotime($row['created_at'])).'</p>';
+									echo '<p>'.$row['description'].'</p>';
 									echo '<div class="border-content mb-1"></div>';	
 									echo '<p class="comments"><a href="viewpost.php?id='.$row['postId'].'">Laisser un commentaire</a></p>';			
 								echo '</div>';
@@ -123,23 +172,31 @@
 		<footer class="home-footer container text-center pt-5">
 			<h4 class="pb-4">Contacter l'un de nos administrateurs</h4>
 			
-			<form action="" class="pt-5">
+			<form action="" class="pt-5" method="post">
 				<div class="container contact">
+					<!-- Vérification des erreurs -->
+					<?php 
+						if(isset($error)){
+							foreach($error as $error){
+								echo '<div class="alert alert-danger" role="alert">'.$error.'</div>';
+							}
+						}
+					?>
 					<div class="row justify-content-center">
 						<div class="col-md-4 pt-3">
-							<input type="text" placeholder="Votre nom"><br />
-							<input type="text" placeholder="Votre email">
+							<input type="text" name='pseudo' placeholder="Votre nom"><br />
+							<input type="text" name='email' placeholder="Votre email">
 						</div>
 						<div class="col-md-4">
-							<textarea name="" id="" cols="40" rows="5" placeholder="Votre message"></textarea>
+							<textarea name="content" cols="40" rows="5" placeholder="Votre message"></textarea>
 						</div>
 					</div>
-					<button class="d-block mx-auto m-4 px-2">Envoyer</button>
+					<button class="d-block mx-auto m-4 px-2" type='submit' name="submit">Envoyer</button>
 				</div>
 			</form>
 
 			<div class="mt-5 copyright">
-				© 2018 by BITSOUND. Proudly created with 
+				© 2018 by BITSOUND. Proudly created by 
 				<a href="https://oreliask.github.io/MDBootstrap-Landing-page/index.html" target="_blank">Orélia Sokambi</a>
 				<div>
 					Icons made by 
