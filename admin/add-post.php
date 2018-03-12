@@ -46,15 +46,15 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 		extract($_POST);
 
 		// Validation basique
-		if($postTitle ==''){
+		if($title ==''){
 			$error[] = 'Veuillez entrer un titre';
 		}
 
-		if($postDesc ==''){
+		if($description ==''){
 			$error[] = 'Veuillez remplir la description';
 		}
 
-		if($postCont ==''){
+		if($content ==''){
 			$error[] = 'Veuillez remplir le contenu de l\'article';
 		}
 
@@ -63,12 +63,12 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 			try {
 
 				// Insertion dans bdd
-				$stmt = $db->prepare('INSERT INTO blog_posts (postTitle,postDesc,postCont,postDate) VALUES (:postTitle, :postDesc, :postCont, :postDate)') ;
+				$stmt = $db->prepare('INSERT INTO blog_posts (title,description,content,created_at) VALUES (:title, :description, :content, :created_at)') ;
 				$stmt->execute(array(
-					':postTitle' => $postTitle,
-					':postDesc' => $postDesc,
-					':postCont' => $postCont,
-					':postDate' => date('Y-m-d H:i:s')
+					':title' => $title,
+					':description' => $description,
+					':content' => $content,
+					':created_at' => date('Y-m-d H:i:s')
 				));
 
 				// Redirection par la page d'index 
@@ -95,17 +95,17 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 		<div class="form-group col">
 			<p><label>Titre</label><br />
-			<input type='text' class="form-control" name='postTitle' value='<?php if(isset($error)){ echo $_POST['postTitle'];}?>'></p>
+			<input type='text' class="form-control" name='title' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['title']);}?>'></p>
 		</div>
 
 		<div class="form-group col">
 			<p><label>Description</label><br />
-			<textarea class="form-control" name='postDesc' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postDesc'];}?></textarea></p>
+			<textarea class="form-control" name='description' cols='60' rows='10'><?php if(isset($error)){ echo htmlspecialchars($_POST['description']);}?></textarea></p>
 		</div>
 
 		<div class="form-group col">
 			<p><label>Contenu</label><br />
-			<textarea class="form-control" name='postCont' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['postCont'];}?></textarea></p>
+			<textarea class="form-control" name='content' cols='60' rows='10'><?php if(isset($error)){ echo htmlspecialchars($_POST['content']);}?></textarea></p>
 		</div>
 
 		<button class="btn btn-custom btn-add d-block mx-auto" type='submit' name='submit' >Envoyer</button>

@@ -104,47 +104,47 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 	<form action='' method='post' class="pb-5">
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Pseudo</label><br />
-			<input type='text' class="form-control" name='pseudo' value='<?php if(isset($error)){ echo $_POST['pseudo'];}?>'></p>
+			<input type='text' class="form-control" name='pseudo' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['pseudo']);}?>'></p>
 		</div>
 
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Prénom</label><br />
-			<input type='text' class="form-control" name='first_name' value='<?php if(isset($error)){ echo $_POST['first_name'];}?>'></p>
+			<input type='text' class="form-control" name='first_name' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['first_name']);}?>'></p>
 		</div>
 
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Nom</label><br />
-			<input type='text' class="form-control" name='last_name' value='<?php if(isset($error)){ echo $_POST['last_name'];}?>'></p>
+			<input type='text' class="form-control" name='last_name' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['last_name']);}?>'></p>
 		</div>
 
 		<div class="form-group">
 			<p class="font-weight-bold"><label>Description</label><br />
-			<textarea class="form-control" name='description' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['description'];}?></textarea></p>
+			<textarea class="form-control" name='description' cols='60' rows='10'><?php if(isset($error)){ echo htmlspecialchars($_POST['description']);}?></textarea></p>
 		</div>
 		
 		<div class="form-group">
 			<p class="font-weight-bold"><label>Biographie</label><br />
-			<textarea class="form-control" name='content' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['content'];}?></textarea></p>
+			<textarea class="form-control" name='content' cols='60' rows='10'><?php if(isset($error)){ echo htmlspecialchars($_POST['content']);}?></textarea></p>
 		</div>	
 
 		<div class="form-group">
 			<p class="font-weight-bold"><label>Genre</label><br />
-			<input type='text' class="form-control" name='genre' value='<?php if(isset($error)){ echo $_POST['genre'];}?>'></p>
+			<input type='text' class="form-control" name='genre' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['genre']);}?>'></p>
 		</div>	
 
 		<div class="form-group">
 			<p class="font-weight-bold"><label>Photo</label><br />
-			<input type='text' class="form-control" name='picture' value='<?php if(isset($error)){ echo $_POST['picture'];}?>'></p>
+			<input type='text' class="form-control" name='picture' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['picture']);}?>'></p>
 		</div>	
 
 		<div class="form-group">
 			<p class="font-weight-bold"><label>Lien web</label><br />
-			<input type='text' class="form-control" name='website' value='<?php if(isset($error)){ echo $_POST['website'];}?>'></p>
+			<input type='text' class="form-control" name='website' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['website']);}?>'></p>
 		</div>	
 
 		<div class="form-group">
 			<p class="font-weight-bold"><label>Vidéo</label><br />
-			<input type='text' class="form-control" name='video' value='<?php if(isset($error)){ echo $_POST['video'];}?>'></p>
+			<input type='text' class="form-control" name='video' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['video']);}?>'></p>
 		</div>
 
 		<button class="btn btn-custom btn-add d-block mx-auto" type='submit' name='submit'>Ajouter un artiste</button>

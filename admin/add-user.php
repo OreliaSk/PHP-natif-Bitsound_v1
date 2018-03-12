@@ -86,22 +86,22 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Pseudo</label><br />
-			<input type='text' class="form-control" name='username' value='<?php if(isset($error)){ echo $_POST['username'];}?>'></p>
+			<input type='text' class="form-control" name='username' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['username']);}?>'></p>
 		</div>
 
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Mot de passe</label><br />
-			<input type='password' class="form-control" name='password' value='<?php if(isset($error)){ echo $_POST['password'];}?>'></p>
+			<input type='password' class="form-control" name='password' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['password']);}?>'></p>
 		</div>
 
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Confirmez le mot de passe</label><br />
-			<input type='password' class="form-control" name='passwordConfirm' value='<?php if(isset($error)){ echo $_POST['passwordConfirm'];}?>'></p>
+			<input type='password' class="form-control" name='passwordConfirm' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['passwordConfirm']);}?>'></p>
 		</div>
 
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Email</label><br />
-			<input type='text' class="form-control" name='email' value='<?php if(isset($error)){ echo $_POST['email'];}?>'></p>
+			<input type='text' class="form-control" name='email' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['email']);}?>'></p>
 		</div>	
 
 		<button class="btn btn-custom btn-add d-block mx-auto" type='submit' name='submit'>Ajouter un administrateur</button>

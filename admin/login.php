@@ -23,8 +23,8 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
 	// A l'envoi du formulaire d'authentification
 	if(isset($_POST['submit'])){
 
-		$username = trim($_POST['username']);
-		$password = trim($_POST['password']);
+		$username = htmlspecialchars(trim($_POST['username']));
+		$password = htmlspecialchars(trim($_POST['password']));
 		
 		if($user->login($username,$password)){ 
 
@@ -40,22 +40,7 @@ if( $user->is_logged_in() ){ header('Location: index.php'); }
 	}// fin if submit
 
 	?>
-
-	<!--<form class="admin-connection" action="" method="post">
 		<?php if(isset($message)){ echo $message; } ?>
-		<p>
-			<label>Pseudo</label>
-			<input type="text" name="username" value=""  />
-		</p>
-		<p>
-			<label>Mot de passe</label>
-			<input type="password" name="password" value=""  />
-		</p>
-		<p>
-			<label></label>
-			<input type="submit" name="submit" value="Connexion"  />
-		</p>
-	</form>-->
 
 	<form class="admin-connection mx-auto p-3" action="" method="post">
 		<?php if(isset($message)){ echo $message; } ?>

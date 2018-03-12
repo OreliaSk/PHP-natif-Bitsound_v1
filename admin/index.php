@@ -57,17 +57,17 @@ if(isset($_GET['delpost'])){
 			</tr>
 			<?php
 				try {
-					$stmt = $db->query('SELECT postID, postTitle, postDate FROM blog_posts ORDER BY postID DESC');
+					$stmt = $db->query('SELECT postID, title, created_at FROM blog_posts ORDER BY postID DESC');
 					while($row = $stmt->fetch()){
 						
 						echo '<tr>';
-						echo '<td>'.$row['postTitle'].'</td>';
-						echo '<td>'.date('j M Y', strtotime($row['postDate'])).'</td>';
+						echo '<td>'.$row['title'].'</td>';
+						echo '<td>'.date('j M Y', strtotime($row['created_at'])).'</td>';
 						?>
 
 						<td>
 							<a href="edit-post.php?id=<?php echo $row['postID'];?>">Editer</a>   
-							<a href="javascript:delpost('<?php echo $row['postID'];?>','<?php echo $row['postTitle'];?>')">Supprimer</a>
+							<a href="javascript:delpost('<?php echo $row['postID'];?>','<?php echo $row['title'];?>')">Supprimer</a>
 						</td>
 						
 						<?php 

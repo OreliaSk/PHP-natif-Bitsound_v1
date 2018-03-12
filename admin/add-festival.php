@@ -93,17 +93,17 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 	<form action='' method='post' class="pb-5">
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Nom du festival</label><br />
-			<input type='text' class="form-control" name='title' value='<?php if(isset($error)){ echo $_POST['title'];}?>'></p>
+			<input type='text' class="form-control" name='title' value='<?php if(isset($error)){ echo htmlspecialchars($_POST['title']);}?>'></p>
 		</div>
 
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Description</label><br />
-			<textarea class="form-control" name='description' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['description'];}?></textarea></p>
+			<textarea class="form-control" name='description' cols='60' rows='10'><?php if(isset($error)){ echo htmlspecialchars($_POST['description']);}?></textarea></p>
 		</div>
 
 		<div class="form-group col">
 			<p class="font-weight-bold"><label>Contenu du festival</label><br />
-			<textarea class="form-control" name='content' cols='60' rows='10'><?php if(isset($error)){ echo $_POST['content'];}?></textarea></p>
+			<textarea class="form-control" name='content' cols='60' rows='10'><?php if(isset($error)){ echo htmlspecialchars($_POST['content']);}?></textarea></p>
 		</div>
 
 		<button class="btn btn-custom btn-add" type='submit' name='submit' >Ajouter un festival</button>

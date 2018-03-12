@@ -43,6 +43,12 @@
                     </a>
                     </li>
                     <li class="nav-item">
+                    <a class="nav-link" href="messages.php">
+                        <i class="fa fa-commenting" aria-hidden="true"></i>
+                        Voir les messages
+                    </a>
+                    </li>
+                    <li class="nav-item">
                     <a class="nav-link" href="../" target="_blank">
                         <i class="fa fa-backward" aria-hidden="true"></i>
                         Retourner sur le site

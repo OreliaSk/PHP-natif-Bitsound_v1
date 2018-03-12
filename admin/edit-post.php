@@ -50,15 +50,15 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 			$error[] = 'Cet article n\'a pas d\'id valide !';
 		}
 
-		if($postTitle ==''){
+		if($title ==''){
 			$error[] = 'Veuillez entrer un titre';
 		}
 
-		if($postDesc ==''){
+		if($description ==''){
 			$error[] = 'Veuillez remplir la description.';
 		}
 
-		if($postCont ==''){
+		if($content ==''){
 			$error[] = 'Veuillez remplir le contenu de l\'article';
 		}
 
@@ -70,15 +70,15 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 				$stmt = $db->prepare(
 					'UPDATE blog_posts 
 					SET 
-					postTitle = :postTitle, 
-					postDesc = :postDesc, 
-					postCont = :postCont 
+					title = :title, 
+					description = :description, 
+					content = :content 
 					WHERE 
 					postID = :postID') ;
 				$stmt->execute(array(
-					':postTitle' => $postTitle,
-					':postDesc' => $postDesc,
-					':postCont' => $postCont,
+					':title' => $title,
+					':description' => $description,
+					':content' => $content,
 					':postID' => $postID
 				));
 
@@ -107,7 +107,7 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 		try {
 
-			$stmt = $db->prepare('SELECT postID, postTitle, postDesc, postCont FROM blog_posts WHERE postID = :postID') ;
+			$stmt = $db->prepare('SELECT postID, title, description, content FROM blog_posts WHERE postID = :postID') ;
 			$stmt->execute(array(':postID' => $_GET['id']));
 			$row = $stmt->fetch(); 
 
@@ -122,17 +122,17 @@ if(!$user->is_logged_in()){ header('Location: login.php'); }
 
 		<div class="form-group col">
 			<p><label>Titre</label><br />
-			<input type='text' class="form-control" name='postTitle' value='<?php echo $row['postTitle'];?>'></p>
+			<input type='text' class="form-control" name='title' value='<?php echo $row['title'];?>'></p>
 		</div>
 
 		<div class="form-group col">
 			<p><label>Description</label><br />
-			<textarea class="form-control" name='postDesc' cols='60' rows='10'><?php echo $row['postDesc'];?></textarea></p>
+			<textarea class="form-control" name='description' cols='60' rows='10'><?php echo $row['description'];?></textarea></p>
 		</div>
 
 		<div class="form-group col">
 			<p><label>Contenu de l'article</label><br />
-			<textarea class="form-control" name='postCont' cols='60' rows='10'><?php echo $row['postCont'];?></textarea></p>
+			<textarea class="form-control" name='content' cols='60' rows='10'><?php echo $row['content'];?></textarea></p>
 		</div>
 
 		<button class="btn btn-custom btn-add d-block mx-auto" type='submit' name='submit' >Mettre à jour</button>
